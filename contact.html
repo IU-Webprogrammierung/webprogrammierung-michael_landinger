@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <title>Kontakt</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+    <header>
+        <nav class="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cities.html">Städte</a></li>
+                <li><a href="countries.html">Länder</a></li>
+                <li><a href="accomodations.html">Unterkünfte</a></li>
+                <li><a href="hints.html">Tipps & Tricks</a></li>
+            </ul>
+        </nav>
+    </header>
     <div>
         <form id="kontaktformular" method="get">
             <label for="vorname">Vorname</label>
-            <input type="text" id="vorname" name="vorname" placeholder="Vorname" required/>
+            <input type="text" id="vorname" name="vorname" placeholder="Vorname" required />
             <label for="name">Name</label>
             <input type="text" id="name" name="name" placeholder="Name" required />
             <label for="email">E-Mail</label>
@@ -21,7 +35,19 @@
             <label for="nachricht">Nachricht</label>
             <textarea name="nachricht" rows="5" cols="33" required></textarea>
         </form>
-        <input type="submit" form="kontaktformular" value="Absenden"/>
+        <input type="submit" form="kontaktformular" value="Absenden" />
     </div>
+        <footer>
+        <nav class="navigationFooter">
+            <ul>
+                <li><a href="imprint.html">Impressum</a></li>
+                <li><a href="privacy.html">Datenschutz</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+        <p>Social Media</p>
+        <p>Kontaktdaten</p>
+    </footer>
 </body>
+
 </html>
