@@ -5,3 +5,40 @@ header nav ul {
 header nav li {
     display: inline-block;
 }
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.row .image {
+    flex: 0 0 30%;
+    max-width: 30%;
+}
+
+.row .image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+.row .text {
+    flex: 1 1 auto;
+}
+
+.row.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Responsive: on small screens, make image full-width and stack */
+@media (max-width: 800px) {
+    .row .image {
+        flex: none;
+        max-width: 100%;
+        width: 100%;
+    }
+}
