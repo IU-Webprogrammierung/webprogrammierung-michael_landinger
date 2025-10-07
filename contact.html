@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Kontakt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div>
+        <form id="kontaktformular" method="get">
+            <label for="vorname">Vorname</label>
+            <input type="text" id="vorname" name="vorname" placeholder="Vorname" required/>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Name" required />
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="email" placeholder="example@email.com" required />
+            <label for="telefonnummer">Telefon</label>
+            <input type="tel" id="telefonnummer" name="telefonnummer" placeholder="+49 12345" required />
+            <label for="betreff">Betreff</label>
+            <input type="text" id="betreff" name="betreff" placeholder="Betreff" required />
+            <label for="nachricht">Nachricht</label>
+            <textarea name="nachricht" rows="5" cols="33" required></textarea>
+        </form>
+        <input type="submit" form="kontaktformular" value="Absenden"/>
+    </div>
+</body>
+</html>
