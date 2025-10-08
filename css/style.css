@@ -178,6 +178,82 @@ main {
     margin-top: 0.75rem;
 }
 
+/* Kontakformular */
+#kontaktformular {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 2rem auto;
+    align-items: start;
+}
+
+#kontaktformular .form-field {
+    display: flex;
+    flex-direction: column;
+}
+
+#kontaktformular .form-field.full {
+    grid-column: 1 / -1;
+}
+
+#kontaktformular label {
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+}
+
+#kontaktformular input[type="text"],
+#kontaktformular input[type="email"],
+#kontaktformular input[type="tel"],
+#kontaktformular textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#kontaktformular textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+/* Absenden mittig zentriert und über gesamte Breite der Form */
+#kontaktformular .form-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+}
+
+#kontaktformular .form-actions input[type="submit"] {
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+}
+
+input.btn.blue {
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    box-shadow: 0 6px 18px;
+    color: white;
+    background: #3492eb;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 1rem auto;
+}
+
+input.btn.blue:hover {
+    background-color: #1968b3;
+    transform: translateY(-2px);
+}
+
+/* Bei <=1024px nur eine Spalte */
+@media (max-width: 1024px) {
+    #kontaktformular {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* 404 */
 
 .main-pagenotfound{
@@ -199,6 +275,7 @@ a.btn-back {
     box-shadow: 0 6px 18px;
     color: white;
     background: #3492eb;
+    cursor: pointer;
 }
 
 a.btn-back:hover {
