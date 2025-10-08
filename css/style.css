@@ -82,10 +82,13 @@ footer nav a {
     color: black;
 }
 
-/* Body */
+/* Allgemein */
 
 body {
     margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Hauptinhalt */
@@ -93,6 +96,7 @@ body {
 main {
     margin-left: 5%;
     margin-right: 5%;
+    flex: 1 0 auto;
 }
 
 .row {
@@ -154,4 +158,32 @@ main {
 .row-country p {
     display: block;
     margin-top: 0.75rem;
+}
+
+/* 404 */
+
+.main-pagenotfound{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+a.btn-back {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    box-shadow: 0 6px 18px;
+    color: white;
+    background: #3492eb;
+}
+
+a.btn-back:hover {
+    background-color: #1968b3;
+    transform: translateY(-2px);
 }
