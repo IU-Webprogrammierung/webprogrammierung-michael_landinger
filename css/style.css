@@ -96,7 +96,25 @@ body {
 main {
     margin-left: 5%;
     margin-right: 5%;
+    margin-bottom: 2rem;
     flex: 1 0 auto;
+}
+
+.section-col-2 {
+    column-count: 2;
+    column-gap: 2rem;
+    flex: 1 0 auto;
+}
+
+/* Bei Bildschirmen bis 1024px */
+@media (max-width: 1024px) {
+    .section-col-2 {
+        column-count: 1;
+    }
+}
+
+.section-col-2 h1 {
+    break-inside: avoid;
 }
 
 .row {
@@ -128,7 +146,7 @@ main {
 }
 
 /* Responsive: on small screens, make image full-width and stack */
-@media (max-width: 800px) {
+@media (max-width: 768px) {
     .row .image {
         flex: none;
         max-width: 100%;
