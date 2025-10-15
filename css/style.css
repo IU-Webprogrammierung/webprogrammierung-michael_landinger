@@ -262,18 +262,21 @@ main {
     column-count: 2;
     column-gap: 2rem;
     flex: 1 0 auto;
+    margin-top: 2rem;
 }
 
 /* Bei Bildschirmen bis 768px */
 @media (max-width: 768px) {
     .section-col-2 {
         column-count: 1;
+        margin-top: 1.5rem;
     }
 }
 
 .section-col-2 h1,
 .section-col-2 h2 {
     break-inside: avoid-column;
+    margin-top: 0;
 }
 
 .row {
