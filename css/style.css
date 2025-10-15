@@ -1,4 +1,5 @@
 /* Navigation */
+/* Navigation Header */
 
 header {
     position: sticky;
@@ -35,6 +36,9 @@ header nav a {
     color: black;
     font-weight: bold;
     font-size: 1.3rem;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
 }
 
 header nav a:hover {
@@ -48,12 +52,121 @@ header nav li .active {
 .logo {
     display: flex;
     align-items: center;
+    height: 100%;
 }
 
 .logo img {
-    height: auto;
-    border-radius: 10px;
+    max-width: 200px;
+    max-height: 60px;
+    width: auto;
+    height: 100%;
+    object-fit: contain;
 }
+
+/* Standard: Icons immer ausblenden */
+header nav .nav-icon {
+    display: none;
+    line-height: 0;
+}
+
+/* Tablet (768px-1024px): Nur Icons */
+@media (min-width: 768px) and (max-width: 1024px) {
+    header nav ul {
+        gap: 8px;
+    }
+    header nav ul a {
+        width: 48px;
+        height: 48px;
+        justify-content: center;
+        padding: 6px;
+    }
+    .nav-text {
+        position: absolute !important;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        white-space: nowrap;
+        border: 0;
+    }
+    header nav .nav-icon {
+        display: inline-block;
+        margin-right: 8px;
+    }
+    header nav a.active, header nav a:hover {
+        background: rgba(255, 182, 182, 0.15);
+    }
+    .logo img {
+        max-width: 150px;
+    }
+}
+
+/* Burger Menü */
+.burger-menu {
+    display: none;
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    color: black;
+}
+
+.burger-menu:hover {
+    color: lightcoral;
+}
+
+/* Mobile (360px-768px) */
+@media (min-width: 360px) and (max-width: 768px) {
+    .burger-menu {
+        display: block;
+    }
+    
+    .nav-list {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    header nav ul li {
+        width: 100%;
+    }
+
+    header nav ul li a {
+        width: 100%;
+        padding: 12px;
+        justify-content: flex-start;
+        gap: 12px;
+    }
+
+    .nav-text {
+        display: inline-block;
+        position: static !important;
+        width: auto !important;
+        height: auto !important;
+    }
+
+    header nav .nav-icon {
+        display: inline-block;
+    }
+
+    .logo img {
+        max-width: 100px;
+    }
+
+}
+
+/* Navigation Footer */
 
 footer {
     display: flex;
@@ -106,15 +219,16 @@ main {
     flex: 1 0 auto;
 }
 
-/* Bei Bildschirmen bis 1024px */
-@media (max-width: 1024px) {
+/* Bei Bildschirmen bis 768px */
+@media (max-width: 768px) {
     .section-col-2 {
         column-count: 1;
     }
 }
 
-.section-col-2 h1 {
-    break-inside: avoid;
+.section-col-2 h1,
+.section-col-2 h2 {
+    break-inside: avoid-column;
 }
 
 .row {
