@@ -306,9 +306,24 @@ main {
 
 /* Responsive: on small screens, make image full-width and stack */
 @media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .row.reverse {
+        flex-direction: column;
+    }
+
     .row .image {
         flex: none;
         max-width: 100%;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .row.text {
+        flex: none;
         width: 100%;
     }
 }
