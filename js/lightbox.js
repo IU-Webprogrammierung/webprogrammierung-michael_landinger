@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const lightboxImg = lightbox.querySelector('.lightbox-image');
     const closeBtn = lightbox.querySelector('.close-lightbox');
 
-    // Alle Bilder in .row .image auswählbar machen
-    document.querySelectorAll('.row .image img').forEach(img => {
+    // Alle Bilder in .row .image UND .gallery-image auswählbar machen
+    document.querySelectorAll('.row .image img, .gallery-image').forEach(img => {
         img.style.cursor = 'pointer';
         img.addEventListener('click', function() {
             lightboxImg.src = this.src;

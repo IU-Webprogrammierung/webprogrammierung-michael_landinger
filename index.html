@@ -14,6 +14,7 @@
 
     <!-- Java script -->
     <script src="js/navigation.js"></script>
+    <script src="js/lightbox.js"></script>
 </head>
 
 <body>
@@ -21,47 +22,80 @@
         <!-- Navigation wird hier per JavaScript eingefügt -->
     </header>
     <main>
-        <section>
-            <h1>Anzahl bereister Länder: 7</h1>
-            <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=-25.14,59.80,41.57,41.24&amp;layer=mapnik"
-                style="border: 1px solid black"></iframe>
+        <section class="hero-section">
+            <h1>Willkommen zu meinen Reiseerfahrungen</h1>
+            <p class="intro-text">Entdecken Sie meine Reiseabenteuer und Erfahrungen aus verschiedenen Ländern und Kulturen.
+            </p>
         </section>
-        <section>
-            <img src="images/other/bild_1.jpg" width="150px" />
-            <img src="images/other/bild_2.jpg" width="150px" />
-            <img src="images/other/bild_3.jpg" width="150px" />
-            <img src="images/other/bild_4.jpg" width="150px" />
+
+        <div class="countries-and-map">
+            <section class="countries-section">
+                <h2>Bereiste Länder</h2>
+                <p class="highlight-text">Bisher bereiste Länder: 7</p>
+                <div class="countries-grid">
+                    <div class="country-tile">Deutschland</div>
+                    <div class="country-tile">Österreich</div>
+                    <div class="country-tile">Kroatien</div>
+                    <div class="country-tile">Spanien</div>
+                    <div class="country-tile">Portugal</div>
+                    <div class="country-tile">Griechenland</div>
+                    <div class="country-tile">Polen</div>
+                </div>
+            </section>
+
+            <section class="map-section">
+                <h2>Interaktive Karte</h2>
+                <div class="map-container">
+                    <iframe width="100%" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=-25.14,59.80,41.57,41.24&amp;layer=mapnik">
+                    </iframe>
+                </div>
+            </section>
+        </div>
+
+        <section class="gallery-section">
+            <h2>Reiseimpressionen</h2>
+            <div class="image-gallery">
+                <img src="images/other/bild_1.jpg" alt="Reisebild 1" class="gallery-image" />
+                <img src="images/other/bild_2.jpg" alt="Reisebild 2" class="gallery-image" />
+                <img src="images/other/bild_3.jpg" alt="Reisebild 3" class="gallery-image" />
+                <img src="images/other/bild_4.jpg" alt="Reisebild 4" class="gallery-image" />
+            </div>
         </section>
-        <table>
-            <thead>
-                <tr>
-                    <th scope="col">Land</th>
-                    <th scope="col">Stadt</th>
-                    <th scope="col">Zeitraum</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Frankreich</td>
-                    <td>Paris</td>
-                    <td>10.01.2026 - 15.01.2026</td>
-                </tr>
-                <tr>
-                    <td>Spanien</td>
-                    <td>Valencia</td>
-                    <td>16.01.2026 - 23.01.2026</td>
-                </tr>
-                <tr>
-                    <td>Deutschland</td>
-                    <td>Köln</td>
-                    <td>11.11.2026</td>
-                </tr>
-            </tbody>
-        </table>
-        <img />
-        <img />
+
+        <section class="travel-schedule">
+            <h2>Kommende Reisen</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Land</th>
+                            <th scope="col">Stadt</th>
+                            <th scope="col">Zeitraum</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Frankreich</td>
+                            <td>Paris</td>
+                            <td>10.01.2026 - 15.01.2026</td>
+                        </tr>
+                        <tr>
+                            <td>Spanien</td>
+                            <td>Valencia</td>
+                            <td>16.01.2026 - 23.01.2026</td>
+                        </tr>
+                        <tr>
+                            <td>Deutschland</td>
+                            <td>Köln</td>
+                            <td>11.11.2026</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
     <!-- Footer wird hier per JavaScript eingefügt -->
 </body>
+
 </html>

@@ -663,3 +663,198 @@ input:focus {
         transition: opacity 0.3s ease;
     }
 }
+
+/* Index Page Styles */
+.map-section,
+.gallery-section,
+.travel-schedule {
+    margin-bottom: 3rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-text {
+    font-size: 1.2rem;
+    color: #d85757;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.map-container {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.gallery-image:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.table-container {
+    overflow-x: auto;
+    margin-top: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: white;
+}
+
+th, td {
+    padding: 1.2rem;
+    text-align: left;
+    border: none;
+    position: relative;
+}
+
+th {
+    background-color: #d85757;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+th:first-child {
+    border-top-left-radius: 8px;
+}
+
+th:last-child {
+    border-top-right-radius: 8px;
+}
+
+tr:last-child td:first-child {
+    border-bottom-left-radius: 8px;
+}
+
+tr:last-child td:last-child {
+    border-bottom-right-radius: 8px;
+}
+
+tbody tr {
+    transition: all 0.2s ease;
+    border-bottom: 1px solid #ffe5e5;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fff9f9;
+}
+
+@media (max-width: 768px) {
+    .map-section,
+    .gallery-section,
+    .travel-schedule {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .image-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    .gallery-image {
+        height: 180px;
+    }
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-bottom: 3rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 800px;
+    margin: 1rem auto;
+}
+
+/* Countries Section */
+.countries-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.countries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.country-tile {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+
+.country-tile:hover {
+    background: #f8f9fa;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 2rem 1rem;
+    }
+
+    .intro-text {
+        font-size: 1.1rem;
+    }
+
+    .countries-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
+
+/* Flex Container für Länder und Karte */
+@media (min-width: 1024px) {
+    .countries-and-map {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .countries-section,
+    .map-section {
+        flex: 1;
+        margin-bottom: 0;
+    }
+}
