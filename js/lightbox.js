@@ -12,13 +12,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const lightboxImg = lightbox.querySelector('.lightbox-image');
     const closeBtn = lightbox.querySelector('.close-lightbox');
 
-    // Alle Bilder in .row .image UND .gallery-image auswählbar machen
-    document.querySelectorAll('.row .image img, .gallery-image').forEach(img => {
+    // Alle Bilder auswählbar machen - inkl. Carousel-Bilder
+    document.querySelectorAll('.row .image img, .gallery-image, .carousel-image').forEach(img => {
         img.style.cursor = 'pointer';
         img.addEventListener('click', function() {
             lightboxImg.src = this.src;
             lightboxImg.alt = this.alt;
             lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Verhindert Scrollen
         });
     });
 
@@ -37,5 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function closeLightbox() {
         lightbox.classList.remove('active');
+        document.body.style.overflow = ''; // Scrollen wieder aktivieren
     }
 });

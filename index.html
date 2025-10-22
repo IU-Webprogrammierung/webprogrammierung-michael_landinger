@@ -15,6 +15,7 @@
     <!-- Java script -->
     <script src="js/navigation.js"></script>
     <script src="js/lightbox.js"></script>
+    <script src="js/carousel.js"></script>
 </head>
 
 <body>
@@ -24,7 +25,8 @@
     <main>
         <section class="hero-section">
             <h1>Willkommen zu meinen Reiseerfahrungen</h1>
-            <p class="intro-text">Entdecken Sie meine Reiseabenteuer und Erfahrungen aus verschiedenen Ländern und Kulturen.
+            <p class="intro-text">Entdecken Sie meine Reiseabenteuer und Erfahrungen aus verschiedenen Ländern und
+                Kulturen.
             </p>
         </section>
 
@@ -56,11 +58,26 @@
 
         <section class="gallery-section">
             <h2>Reiseimpressionen</h2>
-            <div class="image-gallery">
-                <img src="images/other/bild_1.jpg" alt="Reisebild 1" class="gallery-image" />
-                <img src="images/other/bild_2.jpg" alt="Reisebild 2" class="gallery-image" />
-                <img src="images/other/bild_3.jpg" alt="Reisebild 3" class="gallery-image" />
-                <img src="images/other/bild_4.jpg" alt="Reisebild 4" class="gallery-image" />
+            <div class="carousel-container">
+                <button class="carousel-btn prev-btn" aria-label="Vorheriges Bild">&lt;</button>
+                <div class="carousel-wrapper">
+                    <div class="carousel-track">
+                        <img src="images/other/bild_1.jpg"
+                            alt="Das Bild zeigt eine Straße, welche zwischen Häuserzeilen durch führt. Über den Köpfen der Menschen sind bunte Regenschirme aufgehängt."
+                            class="carousel-image" />
+                        <img src="images/other/bild_2.jpg"
+                            alt="Das Bild zeigt den Walchensee in Deutschland. In der Mitte ist eine bewaldete Insel zu sehen, sowie ein kleines Segelboot. Im Hintergrund sind Berge zu sehen bei blauem Himmel."
+                            class="carousel-image" />
+                        <img src="images/other/bild_3.jpg"
+                            alt="Das Bild zeigt einen Strandkorb am Strand auf Norderney. Auf diesem Strandkorb sitzt eine Möwe und rastet."
+                            class="carousel-image" />
+                        <img src="images/other/bild_4.jpg"
+                            alt="Das Bild zeigt den Sonnenuntergang auf Norderney. Die Sonne ist dabei leider von Wolken bedeckt, einzelne Strahlen sind dennoch sichtbar. Der Horizont über dem Meer strahlt orange."
+                            class="carousel-image" />
+                    </div>
+                </div>
+                <button class="carousel-btn next-btn" aria-label="Nächstes Bild">&gt;</button>
+                <div class="carousel-dots"></div>
             </div>
         </section>
 
