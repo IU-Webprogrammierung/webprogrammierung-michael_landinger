@@ -782,21 +782,21 @@ tbody tr:nth-child(even) {
     cursor: pointer;
 }
 
-input.btn.blue {
+input.btn.red {
     padding: 0.75rem 1rem;
     border-radius: 6px;
     font-weight: 600;
-    box-shadow: 0 6px 18px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
     color: white;
-    background: #3492eb;
+    background: #991b1b;
     border: none;
     cursor: pointer;
     display: block;
     margin: 1rem auto;
 }
 
-input.btn.blue:hover {
-    background-color: #1968b3;
+input.btn.red:hover {
+    background-color: #7f1d1d;
     transform: translateY(-2px);
 }
 
@@ -817,14 +817,14 @@ a.btn-back {
     padding: 0.75rem 1rem;
     border-radius: 6px;
     font-weight: 600;
-    box-shadow: 0 6px 18px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
     color: white;
-    background: #3492eb;
+    background: #991b1b;
     cursor: pointer;
 }
 
 a.btn-back:hover {
-    background-color: #1968b3;
+    background-color: #7f1d1d;
     transform: translateY(-2px);
 }
 
