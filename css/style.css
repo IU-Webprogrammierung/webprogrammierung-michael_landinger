@@ -163,7 +163,7 @@ header nav .nav-icon {
     box-shadow: 0 0 0 2px white;
 }
 
-.nav-list .nav-text:focus{
+.nav-list .nav-text:focus {
     text-decoration: underline;
 }
 
@@ -246,7 +246,7 @@ header nav .nav-icon {
 footer {
     display: flex;
     justify-content: space-between;
-    padding: 20px 40px;
+    padding: 20px 100px;
 }
 
 footer nav {
@@ -381,7 +381,8 @@ footer nav a:hover i.bi {
 }
 
 @media (max-width: 768px) {
-    .row, 
+
+    .row,
     .row.reverse {
         flex-direction: column;
         padding: 1rem;
@@ -390,7 +391,8 @@ footer nav a:hover i.bi {
     .row .image,
     .row.reverse .image {
         max-width: 100%;
-        order: -1; /* Bild immer zuerst auf Mobile */
+        order: -1;
+        /* Bild immer zuerst auf Mobile */
     }
 
     .row .text,
@@ -492,7 +494,7 @@ footer nav a:hover i.bi {
         min-width: 100%;
         height: 200px;
     }
-    
+
     .carousel-container {
         padding: 0 50px;
     }
@@ -624,12 +626,12 @@ footer nav a:hover i.bi {
     border-radius: 8px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .gallery-image:hover {
     transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Tabelle */
@@ -637,7 +639,7 @@ footer nav a:hover i.bi {
     overflow-x: auto;
     margin-top: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 table {
@@ -647,7 +649,8 @@ table {
     background: white;
 }
 
-th, td {
+th,
+td {
     padding: 1.2rem;
     text-align: left;
     border: none;
@@ -712,7 +715,7 @@ tbody tr:nth-child(even) {
     max-height: 90vh;
     object-fit: contain;
     border: 2px solid white;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .close-lightbox {
@@ -828,6 +831,51 @@ a.btn-back:hover {
     transform: translateY(-2px);
 }
 
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #991b1b;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.back-to-top.visible {
+    display: flex;
+}
+
+.back-to-top:hover {
+    background-color: #7f1d1d;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.back-to-top:active {
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+}
+
 /* Sonstiges */
 .visually-hidden {
     position: absolute;
@@ -856,6 +904,7 @@ a.btn-back:hover {
 
 /* Größere Touch-Targets */
 @media (max-width: 768px) {
+
     header nav ul li a,
     .burger-menu {
         min-height: 44px;
@@ -865,6 +914,7 @@ a.btn-back:hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .nav-list,
     .nav-icon,
     header nav a,
@@ -876,8 +926,7 @@ a.btn-back:hover {
 }
 
 /* Media Queries */
-/* Mobile (max-width: 768px) */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     footer {
         flex-direction: column;
         gap: 20px;
@@ -903,6 +952,10 @@ a.btn-back:hover {
         text-align: center;
         margin: 0;
     }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
 
     .hero-section {
         padding: 2rem 1rem;
