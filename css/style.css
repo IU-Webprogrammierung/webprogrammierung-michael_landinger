@@ -588,11 +588,6 @@ footer nav a:hover i.bi {
     border: 1px solid var(--border-color);
 }
 
-
-.country-tile:hover {
-    background: #f8f9fa;
-}
-
 .row-country {
     background: var(--bg-primary);
     border-radius: 8px;

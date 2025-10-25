@@ -24,12 +24,6 @@ function initThemeToggle() {
             
             htmlElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
-            
-            // Barrierefreiheit: Wechsel zu Darkmode ankündigen
-            const announcement = newTheme === 'dark' 
-                ? 'Dunkelmodus aktiviert' 
-                : 'Hellmodus aktiviert';
-            announceToScreenReader(announcement);
         }
     });
 }
