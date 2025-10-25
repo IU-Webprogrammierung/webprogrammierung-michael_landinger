@@ -163,7 +163,6 @@ header nav .nav-icon {
 
     header nav .nav-icon {
         display: inline-block;
-        margin-right: 8px;
     }
 
     header nav a.active,
@@ -1069,7 +1068,7 @@ a.btn-back:hover {
 
     header nav .nav-icon {
         display: inline-block;
-        margin-right: 8px;
+        margin-right: 0; /* Geändert von 8px zu 0 */
     }
 
     header nav a.active,
