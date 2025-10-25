@@ -1,9 +1,43 @@
+/* Dark Mode Variables */
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --text-primary: #000000;
+    --text-secondary: #34495e;
+    --text-heading: #2c3e50;
+    --accent-color: #d85757;
+    --accent-hover: #991b1b;
+    --border-color: #eee;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --nav-bg: #ffffff;
+    --table-stripe: #fff9f9;
+    --table-border: #ffe5e5;
+}
+
+[data-theme="dark"] {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --text-heading: #ffffff;
+    --accent-color: #ff8080;
+    --accent-hover: #ff6666;
+    --border-color: #444;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --nav-bg: #242424;
+    --table-stripe: #252525;
+    --table-border: #3a3a3a;
+}
+
 /* Allgemein */
 body {
     margin: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Layout */
@@ -18,7 +52,7 @@ main {
 /* Überschrift */
 main h1 {
     text-align: center;
-    color: #2c3e50;
+    color: var(--text-heading);
     margin-bottom: 2rem;
     font-size: 2.5rem;
 }
@@ -29,8 +63,8 @@ header {
     position: sticky;
     top: 0px;
     z-index: 1000;
-    background-color: white;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    background-color: var(--nav-bg);
+    box-shadow: 0 3px 5px var(--shadow-color);
 }
 
 .navigation {
@@ -64,7 +98,7 @@ header nav li {
 
 header nav a {
     text-decoration: none;
-    color: black;
+    color: var(--text-primary);
     font-weight: bold;
     font-size: 1.3rem;
     position: relative;
@@ -74,13 +108,13 @@ header nav a {
 
 header nav a:hover .nav-text,
 header nav a.active .nav-text {
-    color: #d85757;
+    color: var(--accent-color);
     text-decoration: underline;
 }
 
 header nav a:hover,
 header nav a.active {
-    color: #d85757;
+    color: var(--accent-color);
 }
 
 .logo {
@@ -149,11 +183,11 @@ header nav .nav-icon {
     border: none;
     padding: 8px;
     cursor: pointer;
-    color: black;
+    color: var(--text-primary);
 }
 
 .burger-menu:hover {
-    color: lightcoral;
+    color: var(--accent-color);
 }
 
 .nav-list a:focus,
@@ -179,10 +213,10 @@ header nav .nav-icon {
         top: 100%;
         left: 0;
         right: 0;
-        background-color: white;
+        background-color: var(--nav-bg);
         flex-direction: column;
         padding: 1.5rem;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 20px var(--shadow-color);
         opacity: 0;
         transform: translateY(-10px);
         transition: opacity 0.3s ease, transform 0.3s ease;
@@ -197,7 +231,12 @@ header nav .nav-icon {
         transform: translateY(0);
         border: none;
         backdrop-filter: blur(10px);
-        background-color: rgba(255, 255, 255, 0.95);
+        background-color: var(--nav-bg);
+    }
+
+    /* Dark Mode spezifisch für Mobile Navigation */
+    [data-theme="dark"] .nav-list.active {
+        background-color: rgba(36, 36, 36, 0.95);
     }
 
     header nav ul li {
@@ -222,6 +261,7 @@ header nav .nav-icon {
         width: 24px;
         text-align: center;
         flex-shrink: 0;
+        display: inline-block;
     }
 
     .nav-text {
@@ -235,8 +275,31 @@ header nav .nav-icon {
         background-color: rgba(216, 87, 87, 0.1);
     }
 
+    [data-theme="dark"] header nav ul li a:hover,
+    [data-theme="dark"] header nav ul li a.active {
+        background-color: rgba(255, 128, 128, 0.15);
+    }
+
+    .nav-list .theme-toggle {
+        width: 100%;
+        margin: 4px 0;
+        padding: 12px 16px;
+        border-radius: 8px;
+        justify-content: center;
+        transition: background-color 0.2s ease;
+    }
+
+    .nav-list .theme-toggle:hover {
+        background-color: rgba(216, 87, 87, 0.1);
+    }
+
+    [data-theme="dark"] .nav-list .theme-toggle:hover {
+        background-color: rgba(255, 128, 128, 0.15);
+    }
+
     /* Mindestgröße für Touch-Targets (44x44px nach WCAG 2.1) */
-    header nav ul li a {
+    header nav ul li a,
+    .nav-list .theme-toggle {
         min-height: 44px;
         min-width: 44px;
     }
@@ -272,7 +335,7 @@ footer nav ul li {
 
 footer nav ul li a {
     text-decoration: none;
-    color: black;
+    color: var(--text-primary);
     padding: 8px;
     display: flex;
     align-items: center;
@@ -283,7 +346,7 @@ footer nav i.bi {
 }
 
 footer nav a:hover i.bi {
-    color: lightcoral;
+    color: var(--accent-color);
 }
 
 /* Hero Section */
@@ -291,14 +354,14 @@ footer nav a:hover i.bi {
     text-align: center;
     padding: 3rem 1rem;
     margin-bottom: 3rem;
-    background: white;
+    background: var(--bg-primary);
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 .intro-text {
     font-size: 1.2rem;
-    color: #666;
+    color: var(--text-secondary);
     max-width: 800px;
     margin: 1rem auto;
 }
@@ -329,9 +392,9 @@ footer nav a:hover i.bi {
     display: flex;
     align-items: center;
     gap: 2rem;
-    background: white;
+    background: var(--bg-primary);
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px var(--shadow-color);
     padding: 1.5rem;
     margin-bottom: 2rem;
     transition: transform 0.2s, box-shadow 0.2s;
@@ -343,7 +406,7 @@ footer nav a:hover i.bi {
 
 .row:hover {
     transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px var(--shadow-color);
 }
 
 .row .image {
@@ -365,9 +428,9 @@ footer nav a:hover i.bi {
 
 .row .text h2 {
     font-size: 1.8rem;
-    color: #2c3e50;
+    color: var(--text-heading);
     margin: 0 0 1rem 0;
-    border-bottom: 2px solid #e74c3c;
+    border-bottom: 2px solid var(--accent-color);
     display: inline-block;
     padding-bottom: 0.25rem;
     text-align: center;
@@ -376,7 +439,7 @@ footer nav a:hover i.bi {
 
 .row .text p {
     line-height: 1.6;
-    color: #34495e;
+    color: var(--text-secondary);
     margin: 0;
 }
 
@@ -506,9 +569,9 @@ footer nav a:hover i.bi {
 .countries-section {
     margin-bottom: 3rem;
     padding: 2rem;
-    background: white;
+    background: var(--bg-primary);
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 .countries-grid {
@@ -519,11 +582,11 @@ footer nav a:hover i.bi {
 }
 
 .country-tile {
-    background: #f8f9fa;
+    background: var(--bg-secondary);
     padding: 1rem;
     border-radius: 6px;
     text-align: center;
-    border: 1px solid #eee;
+    border: 1px solid var(--border-color);
 }
 
 
@@ -532,9 +595,9 @@ footer nav a:hover i.bi {
 }
 
 .row-country {
-    background: white;
+    background: var(--bg-primary);
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px var(--shadow-color);
     padding: 1.5rem;
     margin-bottom: 2rem;
     transition: transform 0.2s, box-shadow 0.2s;
@@ -553,9 +616,9 @@ footer nav a:hover i.bi {
 
 .row-country h2 {
     font-size: 1.8rem;
-    color: #2c3e50;
+    color: var(--text-heading);
     margin: 0 0.75rem 0 0;
-    border-bottom: 2px solid #e74c3c;
+    border-bottom: 2px solid var(--accent-color);
     display: inline-block;
     padding-bottom: 0.25rem;
 }
@@ -572,7 +635,7 @@ footer nav a:hover i.bi {
 .row-country p {
     display: block;
     line-height: 1.6;
-    color: #34495e;
+    color: var(--text-secondary);
     margin-top: 1rem;
 }
 
@@ -582,11 +645,11 @@ footer nav a:hover i.bi {
 }
 
 .tips h2 {
-    color: #d85757;
+    color: var(--accent-color);
     font-size: 1.4rem;
     margin-top: 2rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid #ffe5e5;
+    border-bottom: 2px solid var(--table-border);
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -646,7 +709,7 @@ table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
-    background: white;
+    background: var(--bg-primary);
 }
 
 th,
@@ -658,7 +721,7 @@ td {
 }
 
 th {
-    background-color: #991b1b;
+    background-color: var(--accent-hover);
     color: white;
     font-weight: 600;
     text-transform: uppercase;
@@ -684,11 +747,11 @@ tr:last-child td:last-child {
 
 tbody tr {
     transition: all 0.2s ease;
-    border-bottom: 1px solid #ffe5e5;
+    border-bottom: 1px solid var(--table-border);
 }
 
 tbody tr:nth-child(even) {
-    background-color: #fff9f9;
+    background-color: var(--table-stripe);
 }
 
 /* Lightbox */
@@ -764,8 +827,10 @@ tbody tr:nth-child(even) {
     width: 100%;
     box-sizing: border-box;
     padding: 0.5rem;
-    border: 1px solid #ccc;
     border-radius: 4px;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
 }
 
 #kontaktformular textarea {
@@ -791,7 +856,7 @@ input.btn.red {
     font-weight: 600;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
     color: white;
-    background: #991b1b;
+    background: var(--accent-hover);
     border: none;
     cursor: pointer;
     display: block;
@@ -799,7 +864,7 @@ input.btn.red {
 }
 
 input.btn.red:hover {
-    background-color: #7f1d1d;
+    background-color: var(--accent-color);
     transform: translateY(-2px);
 }
 
@@ -822,12 +887,12 @@ a.btn-back {
     font-weight: 600;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
     color: white;
-    background: #991b1b;
+    background: var(--accent-hover);
     cursor: pointer;
 }
 
 a.btn-back:hover {
-    background-color: #7f1d1d;
+    background-color: var(--accent-color);
     transform: translateY(-2px);
 }
 
@@ -838,7 +903,7 @@ a.btn-back:hover {
     right: 30px;
     width: 50px;
     height: 50px;
-    background-color: #991b1b;
+    background-color: var(--accent-hover);
     color: white;
     border: none;
     border-radius: 50%;
@@ -857,7 +922,7 @@ a.btn-back:hover {
 }
 
 .back-to-top:hover {
-    background-color: #7f1d1d;
+    background-color: var(--accent-color);
     transform: translateY(-3px);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
@@ -1039,5 +1104,50 @@ a.btn-back:hover {
 @media (prefers-reduced-motion: no-preference) {
     .lightbox-container {
         transition: opacity 0.3s ease;
+    }
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    transition: color 0.3s ease;
+    min-height: 44px;
+    min-width: 44px;
+}
+
+.theme-toggle:hover {
+    color: var(--accent-color);
+}
+
+.theme-toggle .dark-icon {
+    display: none;
+}
+
+[data-theme="dark"] .theme-toggle .light-icon {
+    display: none;
+}
+
+[data-theme="dark"] .theme-toggle .dark-icon {
+    display: block;
+}
+
+.theme-toggle:focus {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+/* Mobile Anpassung für Theme Toggle */
+@media (max-width: 768px) {
+    .theme-toggle {
+        position: relative;
+        z-index: 1001;
     }
 }
