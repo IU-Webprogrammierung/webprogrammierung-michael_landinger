@@ -374,6 +374,14 @@ footer nav a:hover i.bi {
 }
 
 /* Karte */
+.map-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--bg-primary);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
 #map {
     height: 450px;
     width: 100%;
@@ -384,6 +392,24 @@ footer nav a:hover i.bi {
     #map {
         height: 300px;
     }
+}
+
+/* Reiseimpressionen */
+.gallery-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--bg-primary);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+/* Kommende Reisen */
+.travel-schedule {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--bg-primary);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 /* Zwei Spalten Layout */
