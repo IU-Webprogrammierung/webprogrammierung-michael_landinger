@@ -9,17 +9,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- Stylesheet für interaktive Karte-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
     <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
 
-    <!-- Java script -->
+    <!-- JavaScript -->
     <script src="js/navigation.js"></script>
     <script src="js/lightbox.js"></script>
     <script src="js/carousel.js"></script>
     <script src="js/backToTop.js"></script>
     <script src="js/theme-toggle.js"></script>
+    <!-- Skript, um Marker zur interaktiven Karte hinzufügen zu können -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 
 <body>
@@ -52,10 +57,8 @@
             <section class="map-section">
                 <h2>Interaktive Karte</h2>
                 <div class="map-container">
-                    <iframe width="100%" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-                        src="https://www.openstreetmap.org/export/embed.html?bbox=-25.14,59.80,41.57,41.24&amp;layer=mapnik"
-                        title="Interaktive Karte meiner besuchten Reiseländer">
-                    </iframe>
+                    <div id="map"></div>
+                    <script src="js/map.js"></script>
                 </div>
             </section>
         </div>

@@ -373,6 +373,19 @@ footer nav a:hover i.bi {
     margin: 1rem auto;
 }
 
+/* Karte */
+#map {
+    height: 450px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    #map {
+        height: 300px;
+    }
+}
+
 /* Zwei Spalten Layout */
 .section-col-2 {
     column-count: 2;
@@ -700,7 +713,7 @@ footer nav a:hover i.bi {
     .country-facts {
         grid-template-columns: 1fr;
     }
-    
+
     .country-tips {
         flex-direction: column;
         gap: 0.5rem;
@@ -1138,7 +1151,8 @@ a.btn-back:hover {
 
     header nav .nav-icon {
         display: inline-block;
-        margin-right: 0; /* Geändert von 8px zu 0 */
+        margin-right: 0;
+        /* Geändert von 8px zu 0 */
     }
 
     header nav a.active,
