@@ -813,6 +813,99 @@ footer nav a:hover i.bi {
     font-size: 1.5rem;
 }
 
+.print-btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    color: white;
+    background: var(--accent-hover);
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.print-btn:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.print-btn i {
+    font-size: 1.2rem;
+}
+
+/* Print Style */
+@media print {
+
+    /* Navigation, Footer und Buttons ausblenden */
+    header,
+    footer,
+    .back-to-top,
+    .burger-menu,
+    .theme-toggle,
+    .print-btn {
+        display: none !important;
+    }
+
+    /* Hauptinhalt optimieren */
+    body {
+        background: white !important;
+        color: black !important;
+        font-size: 12pt;
+    }
+
+    main {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    /* Überschriften */
+    h1 {
+        font-size: 24pt !important;
+        color: black;
+        margin-bottom: 1cm !important;
+        page-break-after: avoid;
+    }
+
+    h2 {
+        font-size: 14pt !important;
+        page-break-after: avoid;
+        margin-top: 0.5cm !important;
+    }
+
+    /* Spalten für Druck optimieren */
+    .section-col-2 {
+        column-count: 1 !important;
+    }
+
+    /* Keine Seitenumbrüche in wichtigen Elementen */
+    .tips h2,
+    .tips p {
+        page-break-inside: avoid !important;
+    }
+
+        /* Schatten und Animationen entfernen */
+    * {
+        box-shadow: none !important;
+        animation: none !important;
+        transition: none !important;
+        background-image: none !important;
+    }
+
+    /* Seitenzahlen */
+    @page {
+        margin: 2cm;
+        @bottom-right {
+            content: "Seite " counter(page) " von " counter(pages);
+        }
+    }
+}
+
 /* Gallerie */
 .image-gallery {
     display: grid;
