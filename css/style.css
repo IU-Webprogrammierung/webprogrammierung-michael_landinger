@@ -64,6 +64,10 @@ main h1 {
     font-size: 2.5rem;
 }
 
+.centered {
+    text-align: center;
+}
+
 /* Navigation */
 /* Header */
 header {
@@ -1082,7 +1086,7 @@ tbody tr:nth-child(even) {
     cursor: pointer;
 }
 
-input.btn.red {
+.btn.red {
     padding: 0.75rem 1rem;
     border-radius: 6px;
     font-weight: 600;
@@ -1095,7 +1099,7 @@ input.btn.red {
     margin: 1rem auto;
 }
 
-input.btn.red:hover {
+.btn.red:hover {
     background-color: var(--accent-color);
     transform: translateY(-2px);
 }
