@@ -26,34 +26,40 @@
     </header>
     <main>
         <h1>Kontakt</h1>
-        <form id="kontaktformular" method="get">
-            <div class="form-field">
-                <label for="vorname">Vorname</label>
-                <input type="text" id="vorname" name="vorname" placeholder="Vorname" required />
-            </div>
-            <div class="form-field">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Name" required />
-            </div>
-            <div class="form-field">
-                <label for="email">E-Mail</label>
-                <input type="email" id="email" name="email" placeholder="example@email.com" required />
-            </div>
-            <div class="form-field">
-                <label for="telefonnummer">Telefon</label>
-                <input type="tel" id="telefonnummer" name="telefonnummer" placeholder="+49 12345" required />
-            </div>
-            <div class="form-field full">
-                <label for="betreff">Betreff</label>
-                <input type="text" id="betreff" name="betreff" placeholder="Betreff" required />
-            </div>
-            <div class="form-field full">
-                <label for="nachricht">Nachricht</label>
-                <textarea id="nachricht" name="nachricht" rows="5" cols="33" required></textarea>
-            </div>
-        </form>
-        <input class="btn red" type="submit" form="kontaktformular" value="Absenden" />
+        <section">
+            <h2>Kontaktformular</h2>
+            <form id="kontaktformular" method="get">
+                <fieldset class="form-field">
+                    <legend>Vorname</legend>
+                    <input type="text" id="vorname" name="vorname" placeholder="Vorname" required />
+                </fieldset>
+                <fieldset class="form-field">
+                    <legend>Name</legend>
+                    <input type="text" id="name" name="name" placeholder="Name" required />
+                </fieldset>
+                <fieldset class="form-field">
+                    <legend>E-Mail</legend>
+                    <input type="email" id="email" name="email" placeholder="example@email.com" required />
+                </fieldset>
+                <fieldset class="form-field">
+                    <legend>Telefon</legend>
+                    <input type="tel" id="telefonnummer" name="telefonnummer" placeholder="+49 12345" required />
+                </fieldset>
+                <fieldset class="form-field full">
+                    <legend>Betreff</legend>
+                    <input type="text" id="betreff" name="betreff" placeholder="Betreff" required />
+                </fieldset>
+                <fieldset class="form-field full">
+                    <legend>Nachricht</legend>
+                    <textarea id="nachricht" name="nachricht" rows="5" cols="33" required></textarea>
+                </fieldset>
+                <div class="form-field full">
+                    <button class="btn red" type="submit">Absenden</button>
+                </div>
+            </form>
+        </section>
     </main>
     <!-- Footer wird hier per JavaScript eingefügt -->
 </body>
+
 </html>
