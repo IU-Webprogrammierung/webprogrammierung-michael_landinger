@@ -182,23 +182,20 @@ header {
         ul {
             gap: 8px;
 
-            a {
+            li a {
                 width: 48px;
                 height: 48px;
                 justify-content: center;
                 padding: 6px;
-            }
-        }
 
-        .nav-icon {
-            display: inline-block;
-        }
+                .nav-icon {
+                    display: inline-block;
+                }
 
-        a {
-
-            &.active,
-            &:hover {
-                background: rgba(255, 182, 182, 0.15);
+                &.active,
+                &:hover {
+                    background: rgba(255, 182, 182, 0.15);
+                }
             }
         }
     }
