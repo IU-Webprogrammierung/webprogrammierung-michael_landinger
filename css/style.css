@@ -64,7 +64,8 @@ main {
     margin-right: 5%;
     margin-bottom: 2rem;
     padding-top: 25px;
-    flex: 1 0 auto; /* Flexbox: Nimmt verfügbaren Platz ein, Footer bleibt unten */
+    flex: 1 0 auto;
+    /* Flexbox: Nimmt verfügbaren Platz ein, Footer bleibt unten */
 
     /* Hauptüberschriften im Content-Bereich */
     h1 {
@@ -84,7 +85,8 @@ main {
    ================================ */
 
 header {
-    position: sticky; /* Bleibt beim Scrollen sichtbar */
+    position: sticky;
+    /* Bleibt beim Scrollen sichtbar */
     top: 0px;
     z-index: 1000;
     background-color: var(--nav-bg);
@@ -186,6 +188,7 @@ header {
         }
 
         a {
+
             &.active,
             &:hover {
                 background: rgba(255, 182, 182, 0.15);
@@ -321,7 +324,8 @@ header {
                 align-items: center;
                 box-sizing: border-box;
                 justify-content: flex-start;
-                min-height: 44px; /* WCAG 2.1 Touch-Target Größe */
+                min-height: 44px;
+                /* WCAG 2.1 Touch-Target Größe */
                 min-width: 44px;
 
                 &:hover,
@@ -334,6 +338,7 @@ header {
 
     /* Dark Mode Hover-Effekte für Links */
     [data-theme="dark"] header nav ul li a {
+
         &:hover,
         &.active {
             background-color: rgba(255, 128, 128, 0.15);
@@ -421,8 +426,10 @@ footer {
     box-shadow: 0 2px 8px var(--shadow-color);
 
     h1 {
-        word-break: break-word; /* Verhindert Überlauf bei langen Wörtern */
-        hyphens: auto; /* Automatische Silbentrennung */
+        word-break: break-word;
+        /* Verhindert Überlauf bei langen Wörtern */
+        hyphens: auto;
+        /* Automatische Silbentrennung */
     }
 }
 
@@ -461,6 +468,44 @@ footer {
 }
 
 /* ================================
+   Meter Element Styling
+   ================================ */
+
+meter {
+    width: 100%;
+    height: 30px;
+    display: block;
+    margin: 1rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+
+    &::-webkit-meter-bar {
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    &::-webkit-meter-even-less-good-value {
+        background: linear-gradient(90deg, var(--accent-hover) 0%, var(--accent-color) 100%);
+        border-radius: 8px;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+        height: 25px;
+    }
+}
+
+/* Dark Mode Anpassungen für Meter */
+[data-theme="dark"] meter {
+    &::-webkit-meter-bar {
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+    }
+}
+
+/* ================================
    Sections für Content-Bereiche
    ================================ */
 
@@ -493,12 +538,14 @@ footer {
 
     h1,
     h2 {
-        break-inside: avoid-column; /* Verhindert Spaltenumbruch in Überschriften */
+        break-inside: avoid-column;
+        /* Verhindert Spaltenumbruch in Überschriften */
         margin-top: 0;
     }
 
     @media (max-width: 768px) {
-        column-count: 1; /* Einspaltig auf Mobile */
+        column-count: 1;
+        /* Einspaltig auf Mobile */
         margin-top: 1.5rem;
     }
 }
@@ -564,6 +611,7 @@ footer {
     }
 
     @media (max-width: 768px) {
+
         &,
         &.reverse {
             flex-direction: column;
@@ -573,7 +621,8 @@ footer {
         .image,
         &.reverse .image {
             max-width: 100%;
-            order: -1; /* Bild immer zuerst */
+            order: -1;
+            /* Bild immer zuerst */
         }
 
         .text,
@@ -606,11 +655,13 @@ footer {
 .carousel-track {
     display: flex;
     gap: 20px;
-    transition: transform 0.5s ease-in-out; /* Slide-Animation */
+    transition: transform 0.5s ease-in-out;
+    /* Slide-Animation */
 }
 
 .carousel-image {
-    min-width: calc(33.333% - 14px); /* 3 Bilder nebeneinander */
+    min-width: calc(33.333% - 14px);
+    /* 3 Bilder nebeneinander */
     height: 300px;
     object-fit: cover;
     border-radius: 8px;
@@ -862,8 +913,10 @@ footer {
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        break-inside: avoid-column; /* Verhindert Spaltenumbruch */
-        page-break-inside: avoid; /* Für Druck */
+        break-inside: avoid-column;
+        /* Verhindert Spaltenumbruch */
+        page-break-inside: avoid;
+        /* Für Druck */
         margin-bottom: 1rem;
 
         &:first-child {
@@ -915,6 +968,7 @@ footer {
    ================================ */
 
 @media print {
+
     /* Versteckt nicht-druckbare Elemente */
     header,
     footer,
@@ -955,6 +1009,7 @@ footer {
     }
 
     .tips {
+
         h2,
         p {
             page-break-inside: avoid !important;
@@ -1254,7 +1309,8 @@ a.btn-back {
     z-index: 1000;
 
     &.visible {
-        display: flex; /* Wird sichtbar beim Scrollen */
+        display: flex;
+        /* Wird sichtbar beim Scrollen */
     }
 
     &:hover {
@@ -1304,6 +1360,7 @@ a.btn-back {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .nav-list,
     .nav-icon,
     header nav a,
