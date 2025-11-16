@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <!-- Workaround um FOUC zu verhindern -->
-    <script src="js/theme-init.js" defer></script>
+    <script src="js/theme-init.js"></script>
     <title>Unterkünfte</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
@@ -37,33 +37,35 @@
     </header>
     <main>
         <h1>Unterkünfte</h1>
-        <section class="row">
-            <div class="image">
+        <article class="row">
+            <figure class="image">
                 <img srcset="images/accomodations/villa_kroatien-400.webp 400w,
                              images/accomodations/villa_kroatien-800.webp 800w,
                              images/accomodations/villa_kroatien-1200.webp 1200w"
                     sizes="(max-width: 768px) 100vw, 40vw" src="images/accomodations/villa_kroatien.webp"
                     alt="Das Bild zeigt den Sonnenuntergang vom 1. Stock der Unterkunft. Dabei ist auch der Pool, sowie Teile des Hauses zu sehen. Der Pool ist schön beleuchtet.">
-            </div>
+                <figcaption>Moderne Villa mit Pool bei Novigrad, Kroatien</figcaption>
+            </figure>
             <div class="text">
                 <h2>Villa für 8 Personen bei Novigrad, Kroatien</h2>
                 <p>Moderne Villa etwas außerhalb der Stadt. Ideal für Gruppen.</p>
             </div>
-        </section>
+        </article>
 
-        <section class="row reverse">
-            <div class="image">
+        <article class="row reverse">
+            <figure class="image">
                 <img srcset="images/accomodations/haus_norderney-400.webp 400w,
                              images/accomodations/haus_norderney-800.webp 800w,
                              images/accomodations/haus_norderney-1200.webp 1200w"
                     sizes="(max-width: 768px) 100vw, 40vw" src="images/accomodations/haus_norderney.webp"
                     alt="Das Bild zeigt ein mehrstöckiges Hochhaus auf Norderney bei bewölktem Himmel. Dabei sind Balkone mit teilweise Strandkörben darauf zu sehen. ">
-            </div>
+                <figcaption>Hochhaus mit Meerblick auf Norderney</figcaption>
+            </figure>
             <div class="text">
                 <h2>Zimmer im Hochhaus auf Noderney</h2>
                 <p>Gemütliche Zimmer in Strandnähe, ideal für Paare und kleine Familien.</p>
             </div>
-        </section>
+        </article>
     </main>
     <!-- Footer wird hier per JavaScript eingefügt -->
 </body>

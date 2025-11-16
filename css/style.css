@@ -583,6 +583,7 @@ meter {
     .image {
         flex: 0 0 40%;
         max-width: 40%;
+        margin: 0;
 
         img {
             width: 100%;
@@ -590,6 +591,14 @@ meter {
             object-fit: cover;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        figcaption {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            text-align: center;
         }
     }
 
@@ -799,10 +808,16 @@ meter {
     .country-img {
         width: auto;
         max-height: 150px;
-        margin-left: 0 1rem;
-        margin-right: 1rem;
+        margin: 0 1rem 0 0;
         border-radius: 4px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        img {
+            width: auto;
+            max-height: 150px;
+            border-radius: 4px;
+            display: block;
+        }
     }
 
     @media (max-width: 768px) {
