@@ -9,9 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Stylesheet für interaktive Karte-->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-
     <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.webp">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.webp">
@@ -19,12 +16,15 @@
 
     <!-- JavaScript -->
     <script src="js/navigation.js"></script>
-    <script src="js/lightbox.js"></script>
-    <script src="js/carousel.js"></script>
-    <script src="js/backToTop.js"></script>
-    <script src="js/theme-toggle.js"></script>
+    <script src="js/lightbox.js" defer></script>
+    <script src="js/carousel.js" defer></script>
+    <script src="js/backToTop.js" defer></script>
+    <script src="js/theme-toggle.js" defer></script>
     <!-- Skript, um Marker zur interaktiven Karte hinzufügen zu können -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="preload" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+    <script src="js/map.js" defer></script>
 </head>
 
 <body>
@@ -65,7 +65,6 @@
                 <h2>Interaktive Karte</h2>
                 <div class="map-container">
                     <div id="map"></div>
-                    <script src="js/map.js"></script>
                 </div>
             </section>
         </div>
