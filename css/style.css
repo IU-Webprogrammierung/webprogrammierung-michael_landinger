@@ -88,12 +88,20 @@ main {
         color: var(--text-heading);
         margin-bottom: var(--spacing-lg);
         font-size: 2.5rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
     }
 
     /* Responsive: Kleinere Margins auf Mobile */
     @media (max-width: 768px) {
         margin-left: var(--spacing-sm);
         margin-right: var(--spacing-sm);
+        
+        h1 {
+            font-size: 2rem;
+            word-break: break-word;
+        }
     }
 }
 
