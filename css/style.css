@@ -661,7 +661,7 @@ meter {
             color: var(--text-heading);
             margin: 0 0 var(--spacing-sm) 0;
             border-bottom: 2px solid var(--accent-color);
-            display: inline-block;
+            display: block;
             padding-bottom: 0.25rem;
             text-align: center;
         }
@@ -691,6 +691,12 @@ meter {
         .text,
         &.reverse .text {
             padding: var(--spacing-sm) 0 0 0;
+            text-align: center;
+            
+            h2 {
+                display: block;
+                width: 100%;
+            }
         }
     }
 }
@@ -853,6 +859,7 @@ meter {
     box-shadow: 0 2px 8px var(--shadow-color);
     padding: var(--spacing-lg);
     margin-bottom: var(--spacing-lg);
+    text-align: center;
     
     /* Fly-in Animation - initial versteckt */
     opacity: 0;
@@ -878,7 +885,7 @@ meter {
         box-shadow: 0 4px 12px var(--shadow-color);
     }
 
-    /* Desktop: Bild und Überschrift nebeneinander */
+    /* Desktop: Bild und Überschrift nebeneinander, zentriert */
     h2,
     .country-img {
         display: inline-block;
@@ -888,7 +895,7 @@ meter {
     h2 {
         font-size: 1.8rem;
         color: var(--text-heading);
-        margin: 0 0.75rem 0 0;
+        margin: 0 0 0 var(--spacing-sm);
         border-bottom: 2px solid var(--accent-color);
         display: inline-block;
         padding-bottom: 0.25rem;
@@ -897,7 +904,7 @@ meter {
     .country-img {
         width: auto;
         max-height: 150px;
-        margin: 0 var(--spacing-sm) 0 0;
+        margin: 0;
         border-radius: 4px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
@@ -912,6 +919,7 @@ meter {
     /* Mobile: Wie .row - Bild oben, dann Überschrift, dann Info */
     @media (max-width: 768px) {
         padding: var(--spacing-sm);
+        text-align: center;
 
         /* Überschreibe Desktop inline-block */
         h2,
@@ -946,12 +954,14 @@ meter {
         .country-info {
             width: 100%;
             margin-top: 0;
+            text-align: left;
         }
     }
 }
 
 .country-info {
     margin-top: var(--spacing-md);
+    text-align: left;
 }
 
 /* Fakten-Grid */
