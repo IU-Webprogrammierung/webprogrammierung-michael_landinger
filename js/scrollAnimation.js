@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const observerOptions = {
         root: null, // viewport
         rootMargin: '0px 0px -80px 0px', // Trigger etwas bevor Element sichtbar ist
-        threshold: 0.1 // 10% des Elements muss sichtbar sein
+        threshold: 0.05 // 5% des Elements muss sichtbar sein
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Alle Elemente mit Fly-in-Animation beobachten
-    const animatedElements = document.querySelectorAll('.country-tile, .row, .row-country');
+    const animatedElements = document.querySelectorAll('.country-tile, .row, .row-country, .tips article');
     
     animatedElements.forEach(element => {
         observer.observe(element);
