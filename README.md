@@ -42,6 +42,7 @@ Die Website lädt ein zu einer virtuellen Reise durch verschiedene Länder und S
 - **🎠 Bildkarussell** – Animierte Slideshow für Reisefotos
 - **🗺️ Interaktive Karten** – Leaflet.js Integration mit benutzerdefinierten Markern
 - **📍 Back-to-Top Button** – Smooth-Scroll Navigation zurück zum Seitenanfang
+- **✨ Scroll-Animationen** – Elemente werden beim Scrollen animiert sichtbar
 - **🍔 Hamburger-Menü** – Mobile-optimierte Navigation
 - **♿ Barrierefreiheit** – WCAG 2.1 & WAI-ARIA konform mit semantischem HTML und ARIA-Attributen
 - **🎯 Modulare Komponenten** – Header und Footer als wiederverwendbare Komponenten
@@ -82,6 +83,7 @@ webprogrammierung-michael_landinger/
 │   ├── lightbox.js               # Bildergalerie-Funktionalität
 │   ├── carousel.js               # Karussell-Animation
 │   ├── map.js                    # Leaflet-Karten-Integration
+│   ├── scrollAnimation.js        # Scroll-Animation für Elemente
 │   └── backToTop.js              # Scroll-to-Top Button
 │
 ├── images/
