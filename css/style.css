@@ -870,7 +870,7 @@ meter {
     box-shadow: 0 2px 8px var(--shadow-color);
     padding: var(--spacing-lg);
     margin-bottom: var(--spacing-lg);
-    text-align: center;
+    text-align: left;
     
     /* Fly-in Animation - initial versteckt */
     opacity: 0;
@@ -896,7 +896,7 @@ meter {
         box-shadow: 0 4px 12px var(--shadow-color);
     }
 
-    /* Desktop: Bild und Überschrift nebeneinander, zentriert */
+    /* Desktop: Bild links, Überschrift rechts daneben */
     h2,
     .country-img {
         display: inline-block;
@@ -906,22 +906,24 @@ meter {
     h2 {
         font-size: 1.8rem;
         color: var(--text-heading);
-        margin: 0 0 0 var(--spacing-sm);
-        border-bottom: 2px solid var(--accent-color);
-        display: inline-block;
+        margin: 0;
         padding-bottom: 0.25rem;
+        padding-left: var(--spacing-md);
+        border-bottom: 2px solid var(--accent-color);
+        width: calc(100% - 150px - var(--spacing-md) - var(--spacing-lg));
+        text-align: left;
     }
 
     .country-img {
-        width: auto;
-        max-height: 150px;
-        margin: 0;
+        width: 150px;
+        height: auto;
+        margin: 0 var(--spacing-md) 0 0;
         border-radius: 4px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
         img {
-            width: auto;
-            max-height: 150px;
+            width: 150px;
+            height: auto;
             border-radius: 4px;
             display: block;
         }
