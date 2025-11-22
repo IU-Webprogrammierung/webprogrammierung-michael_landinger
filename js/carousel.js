@@ -6,18 +6,28 @@ document.addEventListener('DOMContentLoaded', function() {
     const dotsContainer = document.querySelector('.carousel-dots');
     
     let currentIndex = 0;
-    const imagesPerView = 3;
-    const maxIndex = Math.max(0, images.length - imagesPerView);
 
-    for (let i = 0; i <= maxIndex; i++) {
-        const dot = document.createElement('span');
-        dot.classList.add('dot');
-        if (i === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => goToSlide(i));
-        dotsContainer.appendChild(dot);
+    // Berechne Anzahl der sichtbaren Bilder basierend auf Bildschirmbreite
+    function getImagesPerView() {
+        const width = window.innerWidth;
+        if (width <= 480) return 1;  // Mobile: 1 Bild
+        if (width <= 768) return 2;  // Tablet: 2 Bilder
+        return 3;                     // Desktop: 3 Bilder
     }
 
-    const dots = document.querySelectorAll('.dot');
+    function initializeDots() {
+        dotsContainer.innerHTML = ''; // Lösche alte Dots
+        const imagesPerView = getImagesPerView();
+        const maxIndex = Math.max(0, images.length - imagesPerView);
+
+        for (let i = 0; i <= maxIndex; i++) {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+        }
+    }
 
     function updateCarousel() {
         const imageWidth = images[0].offsetWidth;
@@ -25,9 +35,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const offset = -(currentIndex * (imageWidth + gap));
         track.style.transform = `translateX(${offset}px)`;
         
+        const dots = document.querySelectorAll('.dot');
         dots.forEach((dot, index) => {
             dot.classList.toggle('active', index === currentIndex);
         });
+
+        const imagesPerView = getImagesPerView();
+        const maxIndex = Math.max(0, images.length - imagesPerView);
 
         // Buttons deaktivieren am Anfang/Ende
         prevBtn.disabled = currentIndex === 0;
@@ -37,6 +51,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function nextSlide() {
+        const imagesPerView = getImagesPerView();
+        const maxIndex = Math.max(0, images.length - imagesPerView);
         if (currentIndex < maxIndex) {
             currentIndex++;
             updateCarousel();
@@ -58,10 +74,14 @@ document.addEventListener('DOMContentLoaded', function() {
     nextBtn.addEventListener('click', nextSlide);
     prevBtn.addEventListener('click', prevSlide);
 
-    // Initiales Update
+    // Initiales Setup
+    initializeDots();
     updateCarousel();
 
+    // Auto-Slide
     setInterval(() => {
+        const imagesPerView = getImagesPerView();
+        const maxIndex = Math.max(0, images.length - imagesPerView);
         if (currentIndex < maxIndex) {
             nextSlide();
         } else {
@@ -70,5 +90,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }, 5000);
 
-    window.addEventListener('resize', updateCarousel);
+    // Bei Resize: Dots neu initialisieren und Index anpassen
+    window.addEventListener('resize', function() {
+        const imagesPerView = getImagesPerView();
+        const maxIndex = Math.max(0, images.length - imagesPerView);
+        
+        // Stelle sicher, dass currentIndex nicht außerhalb des Bereichs liegt
+        if (currentIndex > maxIndex) {
+            currentIndex = maxIndex;
+        }
+        
+        initializeDots();
+        updateCarousel();
+    });
 });
