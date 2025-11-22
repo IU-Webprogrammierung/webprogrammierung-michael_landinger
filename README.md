@@ -141,7 +141,7 @@ Getestet in:
 
 ### Lighthouse Audit
 
-- **Performance:** ≥ 70%
+- **Performance:** ≥ 90%
 - **Accessibility:** ≥ 95%
 - **Best Practices:** ≥ 95%
 - **SEO:** ≥ 90%
