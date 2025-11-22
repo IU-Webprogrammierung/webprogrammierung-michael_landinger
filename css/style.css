@@ -878,6 +878,7 @@ meter {
         box-shadow: 0 4px 12px var(--shadow-color);
     }
 
+    /* Desktop: Bild und Überschrift nebeneinander */
     h2,
     .country-img {
         display: inline-block;
@@ -908,19 +909,43 @@ meter {
         }
     }
 
+    /* Mobile: Wie .row - Bild oben, dann Überschrift, dann Info */
     @media (max-width: 768px) {
-        text-align: center;
+        padding: var(--spacing-sm);
 
+        /* Überschreibe Desktop inline-block */
+        h2,
         .country-img {
             display: block;
-            margin: 0 auto var(--spacing-sm) auto;
-            max-height: 120px;
+        }
+
+        .country-img {
+            width: auto;
+            max-width: 100%;
+            margin: 0 auto var(--spacing-md) auto;
+            max-height: 150px;
+            box-shadow: none;
+            
+            img {
+                width: auto;
+                max-width: 100%;
+                max-height: 150px;
+                margin: 0 auto;
+                display: block;
+            }
         }
 
         h2 {
-            display: inline-block;
-            margin: 0 0 var(--spacing-sm) 0;
+            width: 100%;
+            margin: 0 0 var(--spacing-md) 0;
             text-align: center;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .country-info {
+            width: 100%;
+            margin-top: 0;
         }
     }
 }
