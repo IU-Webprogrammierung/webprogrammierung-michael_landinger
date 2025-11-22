@@ -662,6 +662,7 @@ meter {
     }
 
     .text {
+        flex: 1;
         padding: 0 var(--spacing-md);
 
         h2 {
@@ -671,13 +672,15 @@ meter {
             border-bottom: 2px solid var(--accent-color);
             display: block;
             padding-bottom: 0.25rem;
-            text-align: center;
+            text-align: left;
+            width: 100%;
         }
 
         p {
             line-height: 1.6;
             color: var(--text-secondary);
             margin: 0;
+            text-align: left;
         }
     }
 
