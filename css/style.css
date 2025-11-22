@@ -604,7 +604,22 @@ meter {
     box-shadow: 0 2px 8px var(--shadow-color);
     padding: var(--spacing-lg);
     margin-bottom: var(--spacing-lg);
-    transition: transform 0.2s, box-shadow 0.2s;
+    
+    /* Fly-in Animation - initial versteckt */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, box-shadow 0.2s;
+    
+    /* Sichtbar wenn .visible Klasse gesetzt wird */
+    &.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    /* Gestaffelte Animation */
+    &:nth-child(2) { transition-delay: 0.1s; }
+    &:nth-child(3) { transition-delay: 0.2s; }
+    &:nth-child(4) { transition-delay: 0.3s; }
 
     /* Reverse-Variante: Bild rechts, Text links */
     &.reverse {
@@ -810,6 +825,26 @@ meter {
     border-radius: 6px;
     text-align: center;
     border: 1px solid var(--border-color);
+    
+    /* Fly-in Animation - initial versteckt */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    
+    /* Sichtbar wenn .visible Klasse gesetzt wird */
+    &.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    /* Gestaffelte Animation für Grid-Items */
+    &:nth-child(1) { transition-delay: 0.1s; }
+    &:nth-child(2) { transition-delay: 0.2s; }
+    &:nth-child(3) { transition-delay: 0.3s; }
+    &:nth-child(4) { transition-delay: 0.4s; }
+    &:nth-child(5) { transition-delay: 0.5s; }
+    &:nth-child(6) { transition-delay: 0.6s; }
+    &:nth-child(7) { transition-delay: 0.7s; }
 }
 
 .row-country {
@@ -818,7 +853,25 @@ meter {
     box-shadow: 0 2px 8px var(--shadow-color);
     padding: var(--spacing-lg);
     margin-bottom: var(--spacing-lg);
-    transition: transform 0.2s, box-shadow 0.2s;
+    
+    /* Fly-in Animation - initial versteckt */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, box-shadow 0.2s;
+    
+    /* Sichtbar wenn .visible Klasse gesetzt wird */
+    &.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    /* Gestaffelte Animation */
+    &:nth-child(2) { transition-delay: 0.1s; }
+    &:nth-child(3) { transition-delay: 0.2s; }
+    &:nth-child(4) { transition-delay: 0.3s; }
+    &:nth-child(5) { transition-delay: 0.4s; }
+    &:nth-child(6) { transition-delay: 0.5s; }
+    &:nth-child(7) { transition-delay: 0.6s; }
 
     &:hover {
         transform: translateY(-4px);
@@ -1573,5 +1626,16 @@ a.btn-back {
 
     .dark-icon {
         display: block;
+    }
+}
+
+/* Respektiere prefers-reduced-motion für Barrierefreiheit */
+@media (prefers-reduced-motion: reduce) {
+    .country-tile,
+    .row,
+    .row-country {
+        transition: none;
+        opacity: 1 !important;
+        transform: none !important;
     }
 }
