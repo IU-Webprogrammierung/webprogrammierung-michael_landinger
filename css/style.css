@@ -1197,6 +1197,15 @@ meter {
         background-image: none !important;
     }
 
+    /* Macht alle animierten Elemente sofort sichtbar */
+    .country-tile,
+    .row,
+    .row-country,
+    .tips article {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
     /* Seitenzahlen */
     @page {
         margin: 2cm;
